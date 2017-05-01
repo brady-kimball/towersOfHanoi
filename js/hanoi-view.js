@@ -3,19 +3,51 @@ class View{
     this.game = hanoiGame;
     this.$el = $el;
     this.setupBoard();
+    this.startId = null;
+    this.$el.on('click', 'ul', this.clickTower.bind(this))
+    this.render();
   }
 
   setupBoard() {
     this.$el.addClass("group");
     for (let towerNum = 0; towerNum < 3; towerNum++) {
-      let $tower = $("<ul>")
+      let $tower = $("<ul>");
       for (let discNum = 0; discNum < 3; discNum++) {
         let $disc = $("<li>");
-        $disc.data("towerNum", towerNum);
         $tower.append($disc);
       }
       this.$el.append($tower);
     }
+  }
+
+  render() {
+    let $towers = $("ul");
+    $towers.removeClass();
+    if (this.startId !== null) {
+      $towers.eq(this.startId).addClass('selected')
+    }
+    this.game.towers.forEach((disks, towerIdx) => {
+      let $disks = $towers.eq(towerIdx).children();
+      $disks.removeClass();
+      disks.forEach((diskWidth, diskIdx) => {
+        $disks.eq((-1*(diskIdx + 1))).addClass(`disc-${diskWidth}`)
+      });
+    });
+  }
+
+  clickTower(event) {
+    const clickedTower = $(event.currentTarget).index();
+
+    if (this.startId !== null) {
+      if (!this.game.move(this.startId, clickedTower)) {
+        alert("INVALID MOVE :(");
+      }
+      this.startId = null;
+    } else {
+      this.startId = clickedTower;
+    }
+
+    this.render();
   }
 }
 

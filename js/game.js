@@ -9,7 +9,7 @@ class Game {
 
       if (startTower.length === 0) {
         return false;
-      } else if (endTower.length == 0) {
+      } else if (endTower.length === 0) {
         return true;
       } else {
         const topStartDisc = startTower[startTower.length - 1];

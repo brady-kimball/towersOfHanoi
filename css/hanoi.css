@@ -2,7 +2,6 @@ html, body, h1, figure, ul, li {
   margin: 0;
   padding: 0;
   border: 0;
-
   font: inherit;
   text-align: inherit;
 }
@@ -29,38 +28,50 @@ html {
 }
 
 .hanoi {
-  text-align: center;
   margin: 30px auto;
   width: 600px;
 }
 
 ul {
   float: left;
-  border-bottom: solid black 5px;
+  border-bottom: solid black 10px;
   list-style: none;
+  width: 180px;
+  padding: 0 0 10px 0;
+  cursor: pointer;
+}
+
+ul:hover {
+  border-color: blue;
 }
 
 ul:nth-child(2) {
   margin: 0 20px 0 20px;
 }
 
+ul.selected {
+  border-color: red;
+}
+
 li {
   width: 0px;
   height: 50px;
-  margin: 5px auto;
-  background: lightgray;
-  border: solid black;
-  border-radius: 20px
+  margin: 10px auto;
+  background: gray;
+  border-radius: 25px;
 }
 
-li:first-child {
-  width: 50px;
-}
-
-li:nth-child(2) {
-  width: 100px;
-}
-
-li:last-child {
+li.disc-3 {
   width: 150px;
+  border: solid black;
+}
+
+li.disc-2 {
+  width: 100px;
+  border: solid black;
+}
+
+li.disc-1 {
+  width: 50px;
+  border: solid black;
 }
