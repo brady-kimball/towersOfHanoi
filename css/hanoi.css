@@ -1,0 +1,66 @@
+html, body, h1, figure, ul, li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+
+  font: inherit;
+  text-align: inherit;
+}
+
+.group:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+body {
+  font-family: sans-serif;
+  text-align: center;
+  font-weight: bold;
+}
+
+h1 {
+  margin: 30px auto;
+  font-size: 40px;
+}
+
+html {
+  background: bisque;
+}
+
+.hanoi {
+  text-align: center;
+  margin: 30px auto;
+  width: 600px;
+}
+
+ul {
+  float: left;
+  border-bottom: solid black 5px;
+  list-style: none;
+}
+
+ul:nth-child(2) {
+  margin: 0 20px 0 20px;
+}
+
+li {
+  width: 0px;
+  height: 50px;
+  margin: 5px auto;
+  background: lightgray;
+  border: solid black;
+  border-radius: 20px
+}
+
+li:first-child {
+  width: 50px;
+}
+
+li:nth-child(2) {
+  width: 100px;
+}
+
+li:last-child {
+  width: 150px;
+}
