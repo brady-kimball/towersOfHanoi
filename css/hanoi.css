@@ -1,9 +1,14 @@
-html, body, h1, figure, ul, li {
+/*html, body, h1, figure, ul, li {*/
+html, body, figure, figcaption, ul, li, h1 {
   margin: 0;
   padding: 0;
   border: 0;
   font: inherit;
   text-align: inherit;
+}
+
+ul {
+  list-style: none;
 }
 
 .group:after {
@@ -19,13 +24,14 @@ body {
 }
 
 h1 {
-  margin: 30px auto;
-  font-size: 40px;
+  /*margin: 30px auto;*/
+  margin: 30px;
+  font-size: 60px;
 }
 
-html {
+/*html {
   background: bisque;
-}
+}*/
 
 .hanoi {
   margin: 30px auto;
@@ -34,10 +40,10 @@ html {
 
 ul {
   float: left;
-  border-bottom: solid black 10px;
-  list-style: none;
   width: 180px;
   padding: 0 0 10px 0;
+  /*border-bottom: solid black 10px;*/
+  border-bottom: 10px solid black;
   cursor: pointer;
 }
 
@@ -45,33 +51,37 @@ ul:hover {
   border-color: blue;
 }
 
-ul:nth-child(2) {
-  margin: 0 20px 0 20px;
-}
-
 ul.selected {
   border-color: red;
 }
 
+ul:nth-child(2) {
+  /*margin: 0 20px 0 20px;*/
+  margin: 0 20px;
+}
+
 li {
   width: 0px;
-  height: 50px;
   margin: 10px auto;
+  height: 50px;
   background: gray;
   border-radius: 25px;
 }
 
 li.disc-3 {
-  width: 150px;
-  border: solid black;
+  width: 180px;
+  height: 40px;
+  border: solid black 5px;
 }
 
 li.disc-2 {
-  width: 100px;
-  border: solid black;
+  width: 120px;
+  height: 40px;
+  border: solid black 5px;
 }
 
 li.disc-1 {
-  width: 50px;
-  border: solid black;
+  width: 60px;
+  height: 40px;
+  border: solid black 5px;
 }
