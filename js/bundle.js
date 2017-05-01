@@ -209,6 +209,14 @@ class View{
       this.startId = clickedTower;
     }
 
+    if (this.game.isWon()) {
+      this.$el.off("click");
+      this.$el.addClass("game-over");
+      this.render();
+
+      alert("LOOK AT YOU! YOU DID IT!");
+    }
+
     this.render();
   }
 }

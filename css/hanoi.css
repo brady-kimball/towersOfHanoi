@@ -85,3 +85,13 @@ li.disc-1 {
   height: 40px;
   border: solid black 5px;
 }
+
+.game-over {
+  cursor: default;
+}
+
+.game-over li {
+  background: green;
+  height: 50px;
+  border: none;
+}
